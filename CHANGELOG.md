@@ -1,3 +1,9 @@
+## [4.0.2-beta.1](https://github.com/Lint-Free-Technology/lovelace-fold-entity-row/compare/v4.0.1...v4.0.2-beta.1) (2026-09-12)
+
+### 🐞 Bug Fixes
+
+* Migrate group_config secondary_info `last-xxx` to `last_xxx`. Corrects the display of `last-triggered` for automation entities. ([2063ec8](https://github.com/Lint-Free-Technology/lovelace-fold-entity-row/commit/2063ec8b7767b1e0fa00d73fdb6c1c4afe686ddf)), closes [#54](https://github.com/Lint-Free-Technology/lovelace-fold-entity-row/issues/54)
+
 ## [4.0.1](https://github.com/Lint-Free-Technology/lovelace-fold-entity-row/compare/v4.0.0...v4.0.1) (2026-08-27)
 
 ### 🐞 Bug Fixes
