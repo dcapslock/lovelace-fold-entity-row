@@ -81,7 +81,7 @@ entities:
       type: section
       label: group_config
     group_config:
-      secondary_info: last-changed
+      secondary_info: last_changed
       icon: mdi:desk-lamp
     entities:
       - light.bed_light

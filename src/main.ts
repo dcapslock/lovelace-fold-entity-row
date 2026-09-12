@@ -32,6 +32,12 @@ const DEFAULT_CONFIG = {
   tap_unfold: undefined,
 };
 
+const SECONDARY_INFO_MIGRATED = {
+  "last-changed": "last_changed", 
+  "last-updated": "last_updated", 
+  "last-triggered": "last_triggered"
+};
+
 function ensureObject(config: any) {
   if (config === undefined) return undefined;
   return typeof config === "string" ? { entity: config } : config;
@@ -128,7 +134,10 @@ class FoldEntityRow extends LitElement {
     const parentCard = await findParentCard(this);
     const localStateColorMigrated = this._config.state_color == true ? "state" : this._config.state_color == false ? "none" : undefined;
     const parentStateColorMigrated = parentCard?._config?.state_color == true ? "state" : parentCard?._config?.state_color == false ? "none" : undefined;
-    const groupConfig = { ...this._config.group_config };
+    const groupConfig = { 
+      ...this._config.group_config, 
+      secondary_info: SECONDARY_INFO_MIGRATED[this._config.group_config?.secondary_info] ?? this._config.group_config?.secondary_info 
+    };
     const groupColor = groupConfig.color ?? (groupConfig.state_color == true ? "state" : groupConfig.state_color == false ? "none" : undefined);
     delete groupConfig.state_color;
     delete groupConfig.color;

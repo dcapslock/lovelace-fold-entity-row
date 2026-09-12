@@ -1,0 +1,66 @@
+id: group_config_last
+description: Scenario with group_config and last-x entities show correctly both legacy and new
+view_path: group-config
+
+card:
+  type: entities
+  entities:
+    - type: custom:fold-entity-row
+      open: true
+      head:
+        type: section
+        label: last-changed
+      group_config:
+        secondary_info: last-changed
+      entities:
+        - automation.test_automation
+    - type: custom:fold-entity-row
+      open: true
+      head:
+        type: section
+        label: last_changed
+      group_config:
+        secondary_info: last_changed
+      entities:
+        - automation.test_automation
+    - type: custom:fold-entity-row
+      open: true
+      head:
+        type: section
+        label: last-updated
+      group_config:
+        secondary_info: last-updated
+      entities:
+        - automation.test_automation
+    - type: custom:fold-entity-row
+      open: true
+      head:
+        type: section
+        label: last_updated
+      group_config:
+        secondary_info: last_updated
+      entities:
+        - automation.test_automation
+    - type: custom:fold-entity-row
+      open: true
+      head:
+        type: section
+        label: last-triggered
+      group_config:
+        secondary_info: last-triggered
+      entities:
+        - automation.test_automation
+    - type: custom:fold-entity-row
+      open: true
+      head:
+        type: section
+        label: last_triggered
+      group_config:
+        secondary_info: last_triggered
+      entities:
+        - automation.test_automation
+
+assertions:
+  - type: snapshot
+    name: "07a_group_config_last"
+    threshold: 1 # will always be different since we are looking at last(-_)X

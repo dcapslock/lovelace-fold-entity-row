@@ -1,0 +1,10 @@
+- id: '1789171526721'
+  alias: Test Automation
+  description: ''
+  triggers:
+  - trigger: homeassistant
+    event: start
+  conditions: []
+  actions:
+  - stop: TEST
+  mode: single
